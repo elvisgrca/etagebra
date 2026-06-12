@@ -351,7 +351,8 @@ h1 {
 .section-heading h2,
 .about h2,
 .contact h2,
-.feature-copy h2 {
+.feature-copy h2,
+.personalized h2 {
   margin: 0;
   font-size: clamp(2.1rem, 4.2vw, 4.2rem);
   line-height: 1.02;
@@ -382,6 +383,41 @@ h1 {
 
 .catalog {
   background: var(--white);
+}
+
+.personalized {
+  display: grid;
+  grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.1fr);
+  gap: clamp(28px, 5vw, 70px);
+  align-items: start;
+  background: var(--green);
+  color: var(--white);
+}
+
+.personalized .eyebrow,
+.personalized p {
+  color: rgba(255, 255, 255, 0.74);
+}
+
+.personalized-grid {
+  display: grid;
+  gap: 14px;
+}
+
+.personalized-grid article {
+  padding: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.personalized-grid h3 {
+  margin: 0 0 8px;
+  font-size: 1.28rem;
+}
+
+.personalized-grid p {
+  margin: 0;
 }
 
 .catalog-grid {
@@ -541,7 +577,7 @@ h1 {
 
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 14px;
   margin-top: 42px;
 }
@@ -570,6 +606,15 @@ h1 {
   margin: 0;
   font-size: 0.95rem;
   font-weight: 700;
+}
+
+.team-grid ul {
+  display: grid;
+  gap: 8px;
+  margin: 16px 0 0;
+  padding-left: 18px;
+  color: var(--muted);
+  font-size: 0.92rem;
 }
 
 .contact {
@@ -682,6 +727,7 @@ h1 {
   .split,
   .about,
   .contact,
+  .personalized,
   .course-feature {
     grid-template-columns: 1fr;
   }
