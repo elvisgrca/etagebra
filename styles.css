@@ -389,14 +389,31 @@ h1 {
 .feature-media {
   overflow: hidden;
   border-radius: 8px;
-  background: var(--paper);
+  background:
+    linear-gradient(135deg, rgba(255, 61, 79, 0.08), transparent 44%),
+    var(--paper);
   box-shadow: var(--shadow);
 }
 
-.feature-media img {
-  width: 100%;
-  aspect-ratio: 1;
-  object-fit: cover;
+.subject-board {
+  display: grid;
+  align-content: center;
+  gap: 18px;
+  min-height: 430px;
+  padding: clamp(28px, 5vw, 54px);
+  border: 1px solid var(--line);
+}
+
+.subject-board span {
+  display: block;
+  padding: 16px 18px;
+  border-radius: 8px;
+  background: var(--white);
+  color: var(--green);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(1.25rem, 2vw, 1.7rem);
+  font-weight: 800;
+  box-shadow: 0 10px 28px rgba(18, 59, 51, 0.08);
 }
 
 .feature-copy p {
