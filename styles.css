@@ -348,10 +348,17 @@ h1 {
 .split h2,
 .section-heading h2,
 .about h2,
-.contact h2 {
+.contact h2,
+.feature-copy h2 {
   margin: 0;
   font-size: clamp(2.1rem, 4.2vw, 4.2rem);
   line-height: 1.02;
+}
+
+.section-note {
+  max-width: 580px;
+  color: var(--muted);
+  font-size: 1.05rem;
 }
 
 .course-list {
@@ -369,6 +376,51 @@ h1 {
 .course-list h3,
 .course-list p {
   margin-top: 0;
+}
+
+.course-feature {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.9fr) minmax(0, 1fr);
+  gap: clamp(28px, 5vw, 70px);
+  align-items: center;
+  background: var(--white);
+}
+
+.feature-media {
+  overflow: hidden;
+  border-radius: 8px;
+  background: var(--paper);
+  box-shadow: var(--shadow);
+}
+
+.feature-media img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.feature-copy p {
+  max-width: 680px;
+  color: var(--muted);
+}
+
+.topic-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  max-width: 680px;
+  margin: 28px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.topic-list li {
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--paper);
+  color: var(--green);
+  font-weight: 800;
 }
 
 .method {
@@ -517,7 +569,8 @@ h1 {
   .hero,
   .split,
   .about,
-  .contact {
+  .contact,
+  .course-feature {
     grid-template-columns: 1fr;
   }
 
@@ -536,6 +589,10 @@ h1 {
 
   .portrait-wrap {
     max-width: 360px;
+  }
+
+  .feature-media {
+    max-width: 520px;
   }
 
   .contact .button {
@@ -578,7 +635,8 @@ h1 {
 
   .intro-band,
   .method-grid,
-  .metric-grid {
+  .metric-grid,
+  .topic-list {
     grid-template-columns: 1fr;
   }
 
