@@ -326,7 +326,9 @@ h1 {
 
 .service p,
 .course-list p,
+.catalog-grid p,
 .method-grid p,
+.team-grid p,
 .about p,
 .contact p {
   color: var(--muted);
@@ -376,6 +378,42 @@ h1 {
 .course-list h3,
 .course-list p {
   margin-top: 0;
+}
+
+.catalog {
+  background: var(--white);
+}
+
+.catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 42px;
+}
+
+.catalog-grid article {
+  min-height: 230px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--paper);
+}
+
+.catalog-grid span {
+  color: var(--teal);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.catalog-grid h3 {
+  margin: 18px 0 10px;
+  font-size: 1.25rem;
+}
+
+.catalog-grid p {
+  margin: 0;
 }
 
 .course-feature {
@@ -497,6 +535,43 @@ h1 {
   font-weight: 800;
 }
 
+.team {
+  background: var(--white);
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 42px;
+}
+
+.team-grid article {
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--paper);
+}
+
+.team-grid img {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 8px;
+  object-fit: cover;
+  background: var(--white);
+}
+
+.team-grid h3 {
+  margin: 16px 0 2px;
+  font-size: 1.2rem;
+}
+
+.team-grid p {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
 .contact {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
@@ -575,7 +650,9 @@ h1 {
   }
 
   .intro-band,
-  .method-grid {
+  .method-grid,
+  .catalog-grid,
+  .team-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -623,6 +700,8 @@ h1 {
 
   .intro-band,
   .method-grid,
+  .catalog-grid,
+  .team-grid,
   .metric-grid,
   .topic-list {
     grid-template-columns: 1fr;
