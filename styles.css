@@ -644,8 +644,8 @@ h1 {
 
 .team-grid article {
   display: grid;
-  grid-template-columns: 132px minmax(0, 1fr);
-  column-gap: 16px;
+  grid-template-columns: 76px minmax(0, 1fr);
+  column-gap: 14px;
   align-items: start;
   padding: 16px;
   border: 1px solid var(--line);
@@ -655,8 +655,8 @@ h1 {
 
 .team-grid img {
   grid-row: span 3;
-  width: 132px;
-  height: 132px;
+  width: 76px;
+  height: 76px;
   border-radius: 8px;
   object-fit: cover;
   object-position: center top;
@@ -865,12 +865,12 @@ h1 {
   }
 
   .team-grid article {
-    grid-template-columns: 96px minmax(0, 1fr);
+    grid-template-columns: 64px minmax(0, 1fr);
   }
 
   .team-grid img {
-    width: 96px;
-    height: 96px;
+    width: 64px;
+    height: 64px;
   }
 
   .math-card {
