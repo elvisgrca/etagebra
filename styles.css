@@ -643,6 +643,10 @@ h1 {
 }
 
 .team-grid article {
+  display: grid;
+  grid-template-columns: 132px minmax(0, 1fr);
+  column-gap: 16px;
+  align-items: start;
   padding: 16px;
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -650,15 +654,17 @@ h1 {
 }
 
 .team-grid img {
-  width: 100%;
-  aspect-ratio: 1;
+  grid-row: span 3;
+  width: 132px;
+  height: 132px;
   border-radius: 8px;
   object-fit: cover;
+  object-position: center top;
   background: var(--white);
 }
 
 .team-grid h3 {
-  margin: 16px 0 2px;
+  margin: 0 0 2px;
   font-size: 1.2rem;
 }
 
@@ -856,6 +862,15 @@ h1 {
   .metric-grid,
   .topic-list {
     grid-template-columns: 1fr;
+  }
+
+  .team-grid article {
+    grid-template-columns: 96px minmax(0, 1fr);
+  }
+
+  .team-grid img {
+    width: 96px;
+    height: 96px;
   }
 
   .math-card {
