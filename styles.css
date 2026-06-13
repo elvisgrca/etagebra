@@ -657,10 +657,12 @@ h1 {
   grid-row: span 3;
   width: 76px;
   height: 76px;
-  border-radius: 8px;
+  border: 2px solid var(--white);
+  border-radius: 50%;
   object-fit: cover;
   object-position: center top;
-  background: var(--white);
+  background: var(--coral);
+  box-shadow: 0 8px 18px rgba(22, 24, 39, 0.12);
 }
 
 .team-grid h3 {
