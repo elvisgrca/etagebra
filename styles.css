@@ -644,25 +644,27 @@ h1 {
 
 .team-grid article {
   display: grid;
-  grid-template-columns: 76px minmax(0, 1fr);
-  column-gap: 14px;
+  grid-template-columns: 88px minmax(0, 1fr);
+  column-gap: 16px;
   align-items: start;
   padding: 16px;
-  border: 1px solid var(--line);
+  border: 1px solid rgba(14, 58, 54, 0.14);
   border-radius: 8px;
-  background: var(--paper);
+  background: linear-gradient(135deg, var(--green), var(--plum));
+  color: var(--white);
+  box-shadow: var(--shadow-soft);
 }
 
 .team-grid img {
   grid-row: span 3;
-  width: 76px;
-  height: 76px;
-  border: 2px solid var(--white);
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: center top;
-  background: var(--coral);
-  box-shadow: 0 8px 18px rgba(22, 24, 39, 0.12);
+  width: 88px;
+  height: 88px;
+  padding: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 8px;
+  object-fit: contain;
+  object-position: center;
+  background: var(--white);
 }
 
 .team-grid h3 {
@@ -672,6 +674,7 @@ h1 {
 
 .team-grid p {
   margin: 0;
+  color: var(--gold);
   font-size: 0.95rem;
   font-weight: 700;
 }
@@ -681,7 +684,7 @@ h1 {
   gap: 8px;
   margin: 16px 0 0;
   padding-left: 18px;
-  color: var(--muted);
+  color: rgba(255, 255, 255, 0.76);
   font-size: 0.92rem;
 }
 
@@ -867,12 +870,12 @@ h1 {
   }
 
   .team-grid article {
-    grid-template-columns: 64px minmax(0, 1fr);
+    grid-template-columns: 72px minmax(0, 1fr);
   }
 
   .team-grid img {
-    width: 64px;
-    height: 64px;
+    width: 72px;
+    height: 72px;
   }
 
   .math-card {
