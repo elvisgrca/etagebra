@@ -580,6 +580,21 @@ h1 {
   max-width: 760px;
 }
 
+.catalog-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 20px;
+  max-width: 100%;
+}
+
+.catalog-heading .button {
+  flex: 0 0 auto;
+  border-color: #071636;
+  background: var(--white);
+  color: #071636;
+}
+
 .method-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -867,6 +882,15 @@ h1 {
   .metric-grid,
   .topic-list {
     grid-template-columns: 1fr;
+  }
+
+  .catalog-heading {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .catalog-heading .button {
+    width: 100%;
   }
 
   .team-grid article {
