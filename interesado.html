@@ -45,7 +45,7 @@
         margin: 16px 0 6px;
         font-size: 0.9rem;
       }
-      select, input {
+      input {
         width: 100%;
         padding: 12px;
         border: 1px solid var(--line);
@@ -55,6 +55,22 @@
         background: var(--white);
         color: var(--ink);
       }
+      .cursos-list {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--white);
+        overflow: hidden;
+      }
+      .curso-opcion {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 11px 12px;
+        border-bottom: 1px solid var(--line);
+        font-size: 0.95rem;
+      }
+      .curso-opcion:last-child { border-bottom: none; }
+      .curso-opcion input { width: auto; }
       #error {
         color: var(--coral);
         font-size: 0.85rem;
@@ -65,30 +81,26 @@
   </head>
   <body>
     <h1>Nuevo interesado</h1>
-    <p class="hint">Registra los datos de quien preguntó por un curso.</p>
+    <p class="hint">Registra los datos de quien preguntó por uno o varios cursos.</p>
 
     <form id="form">
-      <label for="curso">Curso</label>
-      <select id="curso" required>
-        <option value="">Selecciona...</option>
-        <option>Aritmética y Fundamentos</option>
-        <option>Álgebra I</option>
-        <option>Álgebra II</option>
-        <option>Cálculo Diferencial I</option>
-        <option>Cálculo Diferencial II</option>
-        <option>Cálculo Diferencial III</option>
-        <option>Cálculo Integral I</option>
-        <option>Cálculo Integral II</option>
-        <option>Cálculo Integral III</option>
-        <option>Inglés Básico I</option>
-        <option>Inglés Básico II</option>
-        <option>Otro</option>
-      </select>
-
-      <div id="curso_otro_wrap" style="display:none;">
-        <label for="curso_otro">¿Cuál curso?</label>
-        <input type="text" id="curso_otro" placeholder="Nombre del curso">
+      <label>Curso(s)</label>
+      <div class="cursos-list" id="cursos_list">
+        <label class="curso-opcion"><input type="checkbox" value="Aritmética y Fundamentos">Aritmética y Fundamentos</label>
+        <label class="curso-opcion"><input type="checkbox" value="Álgebra I">Álgebra I</label>
+        <label class="curso-opcion"><input type="checkbox" value="Álgebra II">Álgebra II</label>
+        <label class="curso-opcion"><input type="checkbox" value="Cálculo Diferencial I">Cálculo Diferencial I</label>
+        <label class="curso-opcion"><input type="checkbox" value="Cálculo Diferencial II">Cálculo Diferencial II</label>
+        <label class="curso-opcion"><input type="checkbox" value="Cálculo Diferencial III">Cálculo Diferencial III</label>
+        <label class="curso-opcion"><input type="checkbox" value="Cálculo Integral I">Cálculo Integral I</label>
+        <label class="curso-opcion"><input type="checkbox" value="Cálculo Integral II">Cálculo Integral II</label>
+        <label class="curso-opcion"><input type="checkbox" value="Cálculo Integral III">Cálculo Integral III</label>
+        <label class="curso-opcion"><input type="checkbox" value="Inglés Básico I">Inglés Básico I</label>
+        <label class="curso-opcion"><input type="checkbox" value="Inglés Básico II">Inglés Básico II</label>
       </div>
+
+      <label for="curso_otro">Otro curso (opcional)</label>
+      <input type="text" id="curso_otro" placeholder="Si no está en la lista">
 
       <label for="fecha">Fecha del curso</label>
       <input type="date" id="fecha" required>
@@ -111,29 +123,27 @@
       }
 
       const form = document.getElementById("form");
-      const cursoSelect = document.getElementById("curso");
-      const cursoOtroWrap = document.getElementById("curso_otro_wrap");
+      const cursosList = document.getElementById("cursos_list");
       const cursoOtro = document.getElementById("curso_otro");
       const errorEl = document.getElementById("error");
 
-      cursoSelect.addEventListener("change", () => {
-        cursoOtroWrap.style.display = cursoSelect.value === "Otro" ? "block" : "none";
-      });
-
       function submit() {
-        const curso = cursoSelect.value === "Otro" ? cursoOtro.value.trim() : cursoSelect.value;
+        const cursos = Array.from(cursosList.querySelectorAll("input:checked")).map((el) => el.value);
+        if (cursoOtro.value.trim()) {
+          cursos.push(cursoOtro.value.trim());
+        }
         const fecha = document.getElementById("fecha").value;
         const nombre = document.getElementById("nombre").value.trim();
         const celular = document.getElementById("celular").value.trim();
 
-        if (!curso || !fecha || !nombre || !celular) {
-          errorEl.textContent = "Falta llenar un campo.";
+        if (!cursos.length || !fecha || !nombre || !celular) {
+          errorEl.textContent = "Marca al menos un curso y llena los demás campos.";
           errorEl.style.display = "block";
           return;
         }
         errorEl.style.display = "none";
 
-        const data = JSON.stringify({ curso, fecha, nombre, celular });
+        const data = JSON.stringify({ cursos, fecha, nombre, celular });
         if (tg) {
           tg.sendData(data);
         } else {
