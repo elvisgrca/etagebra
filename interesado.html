@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nuevo interesado | EtaGebra</title>
+    <link rel="icon" type="image/jpeg" href="assets/logo.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    >
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+      :root {
+        --ink: #161827;
+        --muted: #5c6070;
+        --paper: #f7f5ee;
+        --line: #ded8c8;
+        --teal: #008c96;
+        --coral: #b90726;
+        --white: #ffffff;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        padding: 20px;
+        font-family: "Inter", system-ui, sans-serif;
+        background: var(--paper);
+        color: var(--ink);
+      }
+      h1 {
+        font-size: 1.3rem;
+        margin: 0 0 4px;
+      }
+      p.hint {
+        margin: 0 0 20px;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+      label {
+        display: block;
+        font-weight: 600;
+        margin: 16px 0 6px;
+        font-size: 0.9rem;
+      }
+      select, input {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        font-size: 1rem;
+        font-family: inherit;
+        background: var(--white);
+        color: var(--ink);
+      }
+      #error {
+        color: var(--coral);
+        font-size: 0.85rem;
+        margin-top: 14px;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Nuevo interesado</h1>
+    <p class="hint">Registra los datos de quien preguntó por un curso.</p>
+
+    <form id="form">
+      <label for="curso">Curso</label>
+      <select id="curso" required>
+        <option value="">Selecciona...</option>
+        <option>Aritmética y Fundamentos</option>
+        <option>Álgebra I</option>
+        <option>Álgebra II</option>
+        <option>Cálculo Diferencial I</option>
+        <option>Cálculo Diferencial II</option>
+        <option>Cálculo Diferencial III</option>
+        <option>Cálculo Integral I</option>
+        <option>Cálculo Integral II</option>
+        <option>Cálculo Integral III</option>
+        <option>Inglés Básico I</option>
+        <option>Inglés Básico II</option>
+        <option>Otro</option>
+      </select>
+
+      <div id="curso_otro_wrap" style="display:none;">
+        <label for="curso_otro">¿Cuál curso?</label>
+        <input type="text" id="curso_otro" placeholder="Nombre del curso">
+      </div>
+
+      <label for="fecha">Fecha del curso</label>
+      <input type="date" id="fecha" required>
+
+      <label for="nombre">Nombre</label>
+      <input type="text" id="nombre" placeholder="Nombre completo" required>
+
+      <label for="celular">Celular</label>
+      <input type="tel" id="celular" placeholder="10 dígitos" required>
+
+      <p id="error"></p>
+    </form>
+
+    <script>
+      const tg = window.Telegram && window.Telegram.WebApp;
+      if (tg) {
+        tg.expand();
+        tg.MainButton.setText("Registrar interesado");
+        tg.MainButton.show();
+      }
+
+      const form = document.getElementById("form");
+      const cursoSelect = document.getElementById("curso");
+      const cursoOtroWrap = document.getElementById("curso_otro_wrap");
+      const cursoOtro = document.getElementById("curso_otro");
+      const errorEl = document.getElementById("error");
+
+      cursoSelect.addEventListener("change", () => {
+        cursoOtroWrap.style.display = cursoSelect.value === "Otro" ? "block" : "none";
+      });
+
+      function submit() {
+        const curso = cursoSelect.value === "Otro" ? cursoOtro.value.trim() : cursoSelect.value;
+        const fecha = document.getElementById("fecha").value;
+        const nombre = document.getElementById("nombre").value.trim();
+        const celular = document.getElementById("celular").value.trim();
+
+        if (!curso || !fecha || !nombre || !celular) {
+          errorEl.textContent = "Falta llenar un campo.";
+          errorEl.style.display = "block";
+          return;
+        }
+        errorEl.style.display = "none";
+
+        const data = JSON.stringify({ curso, fecha, nombre, celular });
+        if (tg) {
+          tg.sendData(data);
+        } else {
+          alert("Abre esto desde el botón del bot de Telegram.");
+        }
+      }
+
+      if (tg) {
+        tg.MainButton.onClick(submit);
+      }
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        submit();
+      });
+    </script>
+  </body>
+</html>
