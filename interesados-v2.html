@@ -1,0 +1,208 @@
+﻿<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Interesados v2 | EtaGebra</title>
+    <link rel="icon" type="image/jpeg" href="assets/logo.jpg">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+      :root {
+        --bg: #f7f5ee;
+        --ink: #151827;
+        --muted: #626777;
+        --line: #ddd6c7;
+        --ok: #0f766e;
+        --bad: #b42318;
+        --paper: #fff;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        padding: 18px;
+        font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        color: var(--ink);
+        background: var(--bg);
+      }
+      header {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 14px;
+      }
+      h1 {
+        margin: 0;
+        font-size: 1.25rem;
+      }
+      #count {
+        color: var(--muted);
+        font-size: 0.9rem;
+        white-space: nowrap;
+      }
+      #status {
+        margin: 12px 0;
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+      .item {
+        background: var(--paper);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 13px;
+        margin-bottom: 10px;
+      }
+      .top {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        margin-bottom: 8px;
+      }
+      .name {
+        font-weight: 700;
+      }
+      .date {
+        color: var(--muted);
+        font-size: 0.82rem;
+        text-align: right;
+      }
+      .meta {
+        display: grid;
+        gap: 4px;
+        color: var(--muted);
+        font-size: 0.92rem;
+        line-height: 1.35;
+      }
+      .actions {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        margin-top: 12px;
+      }
+      button {
+        border: 0;
+        border-radius: 8px;
+        padding: 11px 8px;
+        color: #fff;
+        font: inherit;
+        font-weight: 700;
+      }
+      .ok { background: var(--ok); }
+      .bad { background: var(--bad); }
+      button:disabled {
+        opacity: 0.55;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Interesados</h1>
+      <span id="count"></span>
+    </header>
+    <p id="status">Cargando...</p>
+    <main id="list"></main>
+
+    <script>
+      const API = "https://api.etagebra.com";
+      const tg = window.Telegram && window.Telegram.WebApp;
+      const list = document.getElementById("list");
+      const statusEl = document.getElementById("status");
+      const countEl = document.getElementById("count");
+
+      if (tg) {
+        tg.expand();
+        tg.MainButton.setText("Actualizar");
+        tg.MainButton.onClick(loadItems);
+        tg.MainButton.show();
+      }
+
+      function authPayload(extra = {}) {
+        return { initData: tg ? tg.initData : "", ...extra };
+      }
+
+      async function apiPost(path, payload) {
+        let response;
+        try {
+          response = await fetch(`${API}${path}`, {
+            method: "POST",
+            headers: { "content-type": "text/plain;charset=UTF-8" },
+            body: JSON.stringify(payload),
+          });
+        } catch (error) {
+          const initLen = tg && tg.initData ? tg.initData.length : 0;
+          throw new Error(`No conecta con API (${error.message}). initData=${initLen}`);
+        }
+        const data = await response.json().catch(() => ({}));
+        if (!response.ok || !data.ok) {
+          throw new Error(data.error || "No se pudo completar la solicitud.");
+        }
+        return data;
+      }
+
+      function render(items) {
+        countEl.textContent = `${items.length} pendientes`;
+        statusEl.textContent = items.length ? "" : "No hay interesados pendientes.";
+        list.innerHTML = "";
+        for (const item of items) {
+          const node = document.createElement("article");
+          node.className = "item";
+          node.innerHTML = `
+            <div class="top">
+              <div class="name"></div>
+              <div class="date"></div>
+            </div>
+            <div class="meta">
+              <div class="course"></div>
+              <div class="when"></div>
+              <div class="phone"></div>
+              <div class="actor"></div>
+            </div>
+            <div class="actions">
+              <button class="ok" type="button">Confirmar</button>
+              <button class="bad" type="button">No confirmo</button>
+            </div>
+          `;
+          node.querySelector(".name").textContent = item.nombre || "Sin nombre";
+          node.querySelector(".date").textContent = item.fecha_registro || "";
+          node.querySelector(".course").textContent = `Curso: ${item.curso || "-"}`;
+          node.querySelector(".when").textContent = `Fecha: ${item.fecha_curso || "-"} Â· Turno: ${item.turno || "-"}`;
+          node.querySelector(".phone").textContent = `Cel: ${item.celular || "-"}`;
+          node.querySelector(".actor").textContent = `Registrado por: ${item.registrado_por || "-"}`;
+          node.querySelector(".ok").addEventListener("click", () => setEstado(item.row, "Confirmado", node));
+          node.querySelector(".bad").addEventListener("click", () => setEstado(item.row, "Rechazado", node));
+          list.appendChild(node);
+        }
+      }
+
+      async function loadItems() {
+        try {
+          statusEl.textContent = "Cargando...";
+          const data = await apiPost("/api/interesados", authPayload());
+          render(data.items || []);
+        } catch (error) {
+          countEl.textContent = "";
+          list.innerHTML = "";
+          statusEl.textContent = tg
+            ? `Error: ${error.message}`
+            : "Abre esta pantalla desde el boton del bot en Telegram.";
+        }
+      }
+
+      async function setEstado(row, estado, node) {
+        const buttons = node.querySelectorAll("button");
+        buttons.forEach((button) => { button.disabled = true; });
+        try {
+          await apiPost("/api/interesados/estado", authPayload({ row, estado }));
+          node.remove();
+          loadItems();
+        } catch (error) {
+          statusEl.textContent = `Error: ${error.message}`;
+          buttons.forEach((button) => { button.disabled = false; });
+        }
+      }
+
+      loadItems();
+    </script>
+  </body>
+</html>
+
