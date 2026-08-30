@@ -1094,6 +1094,60 @@ body {
   filter: drop-shadow(0 34px 32px rgba(7, 22, 54, 0.2));
 }
 
+.admissions-campaign {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.86fr) minmax(340px, 1fr);
+  gap: clamp(32px, 6vw, 84px);
+  align-items: center;
+  background: #f5f2fb;
+}
+
+.admissions-campaign-art {
+  display: block;
+  overflow: hidden;
+  border-radius: 18px;
+  box-shadow: 0 28px 60px rgba(7, 22, 54, 0.2);
+}
+
+.admissions-campaign-art img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.admissions-campaign-copy {
+  max-width: 590px;
+}
+
+.admissions-campaign-copy h2 {
+  margin: 0;
+  color: #071636;
+  font-size: clamp(2.15rem, 4vw, 4.35rem);
+  line-height: 0.98;
+}
+
+.admissions-campaign-copy > p:not(.eyebrow) {
+  margin: 24px 0 0;
+  color: #4b5568;
+  font-size: 1.08rem;
+}
+
+.admissions-campaign-copy ul {
+  display: grid;
+  gap: 10px;
+  margin: 24px 0 30px;
+  padding: 0;
+  color: #071636;
+  font-weight: 700;
+  list-style: none;
+}
+
+.admissions-campaign-copy li::before {
+  margin-right: 10px;
+  color: #e92929;
+  content: "✓";
+}
+
 .course-showcase {
   padding-top: 24px;
   background: var(--white);
@@ -1236,6 +1290,10 @@ body {
   .course-cards {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
+
+  .admissions-campaign {
+    grid-template-columns: minmax(280px, 0.9fr) minmax(300px, 1fr);
+  }
 }
 
 @media (max-width: 620px) {
@@ -1295,6 +1353,20 @@ body {
   .course-cards,
   .benefit-row {
     grid-template-columns: 1fr;
+  }
+
+  .admissions-campaign {
+    grid-template-columns: 1fr;
+    padding: 44px 24px;
+  }
+
+  .admissions-campaign-art {
+    width: min(100%, 460px);
+    margin: 0 auto;
+  }
+
+  .admissions-campaign-copy h2 {
+    font-size: 2.65rem;
   }
 }
 
