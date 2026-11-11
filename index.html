@@ -4,211 +4,121 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>EtaGebra | Cursos de matemáticas</title>
-    <meta
-      name="description"
-      content="Cursos grupales y clases personalizadas de matemáticas, física, química, biología e inglés. Catálogo permanente de cursos EtaGebra."
-    >
+    <meta name="description" content="Cursos grupales y clases personalizadas de matemáticas, física, química, biología e inglés. Catálogo permanente de cursos EtaGebra.">
     <link rel="icon" type="image/png" href="assets/icon.png?v=1">
     <link rel="apple-touch-icon" href="assets/icon.png?v=1">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;1,6..96,400&family=Geist:wght@400;500&family=Geist+Mono:wght@400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="home.css?v=20261111-color">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="site.css?v=20261111-a">
   </head>
-  <body>
-    <header class="site-header" data-header>
-      <a class="brand" href="#inicio" aria-label="EtaGebra inicio">
-        <img class="brand-logo" src="assets/logo.jpg" alt="" aria-hidden="true">
-      </a>
-
-      <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" data-nav-toggle>
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
+  <body class="home">
+    <header class="site-header">
+      <a class="brand" href="#inicio" aria-label="EtaGebra inicio"><img class="brand-logo" src="assets/logo.jpg" alt=""></a>
+      <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" data-nav-toggle><span></span><span></span><span></span></button>
       <nav class="main-nav" data-nav>
         <a href="cursos.html">Cursos</a>
-        <a class="teacher-link" href="https://api.etagebra.com/profesores">Da clases</a>
+        <a href="#entrenadores">Simuladores</a>
+        <a href="https://api.etagebra.com/profesores">Da clases</a>
         <a href="blog.html">Blog</a>
         <a href="#metodo">Método</a>
         <a href="#equipo">Equipo</a>
         <a href="#contacto">Contacto</a>
       </nav>
-      <a class="btn btn-outline header-cta" href="https://wa.me/525638811474?text=Hola%2C%20quiero%20informacion%20sobre%20los%20cursos%20de%20EtaGebra.">
-        Solicitar información
-      </a>
+      <a class="btn btn-primary header-cta" href="https://wa.me/525638811474?text=Hola%2C%20quiero%20informacion%20sobre%20los%20cursos%20de%20EtaGebra.">Solicitar información</a>
     </header>
 
     <main>
       <section class="hero" id="inicio">
-        <div class="container hero-grid">
-          <h1>Aprende ciencias con confianza.</h1>
-          <div class="hero-side">
-            <p class="lead">
-              Cursos grupales y clases personalizadas online en vivo para estudiantes de secundaria,
-              bachillerato y universidad.
-            </p>
+        <div class="wrap hero-grid">
+          <div class="hero-copy">
+            <h1>Aprende ciencias con confianza.</h1>
+            <p class="lead">Cursos grupales y clases personalizadas online en vivo para estudiantes de secundaria, bachillerato y universidad.</p>
             <div class="actions">
-              <a class="btn btn-primary" href="https://wa.me/525638811474?text=Hola%2C%20quiero%20informacion%20sobre%20los%20cursos%20de%20EtaGebra.">
-                Solicitar información
-              </a>
-              <a class="text-link" href="cursos.html">Ver cursos</a>
+              <a class="btn btn-primary" href="https://wa.me/525638811474?text=Hola%2C%20quiero%20informacion%20sobre%20los%20cursos%20de%20EtaGebra.">Solicitar información</a>
+              <a class="btn btn-ghost" href="cursos.html">Ver cursos</a>
             </div>
           </div>
+          <div class="hero-art"><img src="assets/libreta.png" alt="Cuaderno con fórmulas y una calculadora"></div>
         </div>
       </section>
 
-      <section class="section course-showcase" aria-label="Cursos permanentes destacados">
-        <div class="container">
+      <section class="section" aria-label="Cursos permanentes destacados">
+        <div class="wrap">
           <div class="section-head">
             <h2>Nuestros cursos permanentes</h2>
-            <a class="text-link" href="cursos.html">Ver cursos disponibles</a>
+            <a class="more" href="cursos.html">Ver cursos disponibles</a>
           </div>
-          <div class="charset">
-            <article>
-              <span class="glyph" aria-hidden="true">#</span>
-              <h3>Aritmética</h3>
-              <p>Fundamentos sólidos para toda tu vida.</p>
-            </article>
-            <article>
-              <span class="glyph" aria-hidden="true">x²</span>
-              <h3>Álgebra I</h3>
-              <p>Domina expresiones y ecuaciones.</p>
-            </article>
-            <article>
-              <span class="glyph" aria-hidden="true">[ ]</span>
-              <h3>Álgebra II</h3>
-              <p>Lleva tus habilidades al siguiente nivel.</p>
-            </article>
-            <article>
-              <span class="glyph" aria-hidden="true">f′</span>
-              <h3>Cálculo Diferencial</h3>
-              <p>Entiende el cambio. Domina el cálculo.</p>
-            </article>
-            <article>
-              <span class="glyph" aria-hidden="true">∫</span>
-              <h3>Cálculo Integral</h3>
-              <p>De las antiderivadas a aplicaciones reales.</p>
-            </article>
-            <article>
-              <span class="glyph" aria-hidden="true">En</span>
-              <h3>Inglés</h3>
-              <p>Básico I y II para comunicar ideas.</p>
-            </article>
+          <div class="cards cards-3">
+            <article class="card c1"><span class="chip">#</span><h3>Aritmética</h3><p>Fundamentos sólidos para toda tu vida.</p></article>
+            <article class="card c2"><span class="chip">x²</span><h3>Álgebra I</h3><p>Domina expresiones y ecuaciones.</p></article>
+            <article class="card c3"><span class="chip">[ ]</span><h3>Álgebra II</h3><p>Lleva tus habilidades al siguiente nivel.</p></article>
+            <article class="card c4"><span class="chip">f′</span><h3>Cálculo Diferencial</h3><p>Entiende el cambio. Domina el cálculo.</p></article>
+            <article class="card c5"><span class="chip">∫</span><h3>Cálculo Integral</h3><p>De las antiderivadas a aplicaciones reales.</p></article>
+            <article class="card c6"><span class="chip">En</span><h3>Inglés</h3><p>Básico I y II para comunicar ideas.</p></article>
           </div>
-          <dl class="benefits">
-            <div>
-              <dt>Clases en vivo</dt>
-              <dd>Interacción real con profesores y compañeros.</dd>
-            </div>
-            <div>
-              <dt>Metodología clara</dt>
-              <dd>Entiende, practica y domina.</dd>
-            </div>
-            <div>
-              <dt>Resultados reales</dt>
-              <dd>Mejora tu rendimiento y alcanza tus metas.</dd>
-            </div>
-            <div>
-              <dt>Enfoque en ti</dt>
-              <dd>Clases personalizadas según tus necesidades.</dd>
-            </div>
-          </dl>
+          <ul class="perks">
+            <li><strong>Clases en vivo</strong><span>Interacción real con profesores y compañeros.</span></li>
+            <li><strong>Metodología clara</strong><span>Entiende, practica y domina.</span></li>
+            <li><strong>Resultados reales</strong><span>Mejora tu rendimiento y alcanza tus metas.</span></li>
+            <li><strong>Enfoque en ti</strong><span>Clases personalizadas según tus necesidades.</span></li>
+          </ul>
         </div>
       </section>
 
-      <section class="section band" id="cursos">
-        <div class="container split">
+      <section class="section alt" id="entrenadores">
+        <div class="wrap">
+          <div class="section-head">
+            <h2>Simuladores y entrenadores</h2>
+            <a class="btn btn-primary" href="https://api.etagebra.com/estudiantes">Probar gratis, sin registro</a>
+          </div>
+          <p class="section-note">Prueba gratis el simulador y el entrenador de tu examen.</p>
+          <div class="cards cards-2">
+            <article class="card feature"><span class="tag">TOEFL ITP</span><h3>Simuladores</h3><p>Las tres secciones del examen, Listening, Structure y Reading, con el tiempo corriendo. Al terminar cada sección ves tu puntaje estimado y la explicación de cada pregunta.</p></article>
+            <article class="card feature"><span class="tag">TOEFL ITP</span><h3>Entrenador</h3><p>Practica por tipo de pregunta antes de resolver un examen completo.</p></article>
+            <article class="card feature"><span class="tag">UNAM</span><h3>Simulacros</h3><p>Simulacros por área, de la 1 a la 4, para el examen de admisión de la UNAM.</p></article>
+            <article class="card feature"><span class="tag">UNAM</span><h3>Entrenador</h3><p>Práctica por materia: Matemáticas, Física, Química, Español e Historia Universal.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="cursos">
+        <div class="wrap split">
           <div>
             <h2>Elige el módulo que necesitas reforzar.</h2>
-            <p class="note">
-              Cada curso grupal tiene una duración de 10 horas. La metodología combina explicación breve
-              con práctica guiada intensiva. También ofrecemos clases personalizadas según la necesidad del estudiante.
-            </p>
+            <p class="note">Cada curso grupal tiene una duración de 10 horas. La metodología combina explicación breve con práctica guiada intensiva. También ofrecemos clases personalizadas según la necesidad del estudiante.</p>
           </div>
-          <div class="rows">
-            <article>
-              <h3>Ruta Matemática</h3>
-              <p>Aritmética, álgebra, cálculo diferencial y cálculo integral organizados por módulos progresivos.</p>
-            </article>
-            <article>
-              <h3>Área de Inglés</h3>
-              <p>Inglés básico I y II: gramática, vocabulario, listening, writing y speaking desde bases claras.</p>
-            </article>
+          <div class="stack">
+            <article class="card"><h3>Ruta Matemática</h3><p>Aritmética, álgebra, cálculo diferencial y cálculo integral organizados por módulos progresivos.</p></article>
+            <article class="card"><h3>Área de Inglés</h3><p>Inglés básico I y II: gramática, vocabulario, listening, writing y speaking desde bases claras.</p></article>
           </div>
         </div>
       </section>
 
-      <section class="section catalog" aria-label="Lista completa de cursos">
-        <div class="container">
+      <section class="section" aria-label="Lista completa de cursos">
+        <div class="wrap">
           <div class="section-head">
             <h2>Catálogo completo</h2>
-            <a class="btn btn-outline" href="cursos.html">Ver detalles de los cursos</a>
+            <a class="btn btn-ghost" href="cursos.html">Ver detalles de los cursos</a>
           </div>
-
-          <div class="catalog-table">
-            <article>
-              <span class="area">Matemáticas</span>
-              <h3>Aritmética y Fundamentos</h3>
-              <p>Operaciones básicas, fracciones, decimales, porcentajes, razones, proporciones, potencias, raíces y problemas aplicados.</p>
-            </article>
-            <article>
-              <span class="area">Matemáticas</span>
-              <h3>Álgebra I</h3>
-              <p>Lenguaje algebraico, expresiones algebraicas, productos notables, ecuaciones lineales y cuadráticas.</p>
-            </article>
-            <article>
-              <span class="area">Matemáticas</span>
-              <h3>Álgebra II</h3>
-              <p>Factorización, sistemas de ecuaciones, desigualdades, valor absoluto y funciones lineales y cuadráticas.</p>
-            </article>
-            <article>
-              <span class="area">Matemáticas</span>
-              <h3>Cálculo Diferencial I</h3>
-              <p>Funciones, dominio y rango, límites básicos, continuidad, derivada por definición e interpretación geométrica.</p>
-            </article>
-            <article>
-              <span class="area">Matemáticas</span>
-              <h3>Cálculo Diferencial II</h3>
-              <p>Regla de la potencia, producto, cociente, cadena y derivadas exponenciales, logarítmicas y trigonométricas.</p>
-            </article>
-            <article>
-              <span class="area">Matemáticas</span>
-              <h3>Cálculo Diferencial III</h3>
-              <p>Optimización, máximos y mínimos, razones de cambio, concavidad, puntos de inflexión y análisis de gráficas.</p>
-            </article>
-            <article>
-              <span class="area">Matemáticas</span>
-              <h3>Cálculo Integral I</h3>
-              <p>Antiderivadas, integrales inmediatas, fórmulas básicas, cambio de variable e integrales trigonométricas básicas.</p>
-            </article>
-            <article>
-              <span class="area">Matemáticas</span>
-              <h3>Cálculo Integral II</h3>
-              <p>Integración por partes, integrales trigonométricas, sustituciones elaboradas y combinación de métodos.</p>
-            </article>
-            <article>
-              <span class="area">Matemáticas</span>
-              <h3>Cálculo Integral III</h3>
-              <p>Fracciones parciales, sustitución trigonométrica, integral definida, área bajo la curva, volúmenes y aplicaciones.</p>
-            </article>
-            <article>
-              <span class="area">Inglés</span>
-              <h3>Inglés Básico I</h3>
-              <p>Verb To Be, Present Simple, pronombres, vocabulario esencial y conversaciones básicas.</p>
-            </article>
-            <article>
-              <span class="area">Inglés</span>
-              <h3>Inglés Básico II</h3>
-              <p>Present Continuous, Past Simple, preguntas, respuestas y expansión de vocabulario.</p>
-            </article>
+          <div class="mini-cards">
+            <article class="mini"><span class="area">Matemáticas</span><h3>Aritmética y Fundamentos</h3><p>Operaciones básicas, fracciones, decimales, porcentajes, razones, proporciones, potencias, raíces y problemas aplicados.</p></article>
+            <article class="mini"><span class="area">Matemáticas</span><h3>Álgebra I</h3><p>Lenguaje algebraico, expresiones algebraicas, productos notables, ecuaciones lineales y cuadráticas.</p></article>
+            <article class="mini"><span class="area">Matemáticas</span><h3>Álgebra II</h3><p>Factorización, sistemas de ecuaciones, desigualdades, valor absoluto y funciones lineales y cuadráticas.</p></article>
+            <article class="mini"><span class="area">Matemáticas</span><h3>Cálculo Diferencial I</h3><p>Funciones, dominio y rango, límites básicos, continuidad, derivada por definición e interpretación geométrica.</p></article>
+            <article class="mini"><span class="area">Matemáticas</span><h3>Cálculo Diferencial II</h3><p>Regla de la potencia, producto, cociente, cadena y derivadas exponenciales, logarítmicas y trigonométricas.</p></article>
+            <article class="mini"><span class="area">Matemáticas</span><h3>Cálculo Diferencial III</h3><p>Optimización, máximos y mínimos, razones de cambio, concavidad, puntos de inflexión y análisis de gráficas.</p></article>
+            <article class="mini"><span class="area">Matemáticas</span><h3>Cálculo Integral I</h3><p>Antiderivadas, integrales inmediatas, fórmulas básicas, cambio de variable e integrales trigonométricas básicas.</p></article>
+            <article class="mini"><span class="area">Matemáticas</span><h3>Cálculo Integral II</h3><p>Integración por partes, integrales trigonométricas, sustituciones elaboradas y combinación de métodos.</p></article>
+            <article class="mini"><span class="area">Matemáticas</span><h3>Cálculo Integral III</h3><p>Fracciones parciales, sustitución trigonométrica, integral definida, área bajo la curva, volúmenes y aplicaciones.</p></article>
+            <article class="mini"><span class="area en">Inglés</span><h3>Inglés Básico I</h3><p>Verb To Be, Present Simple, pronombres, vocabulario esencial y conversaciones básicas.</p></article>
+            <article class="mini"><span class="area en">Inglés</span><h3>Inglés Básico II</h3><p>Present Continuous, Past Simple, preguntas, respuestas y expansión de vocabulario.</p></article>
           </div>
         </div>
       </section>
 
-      <section class="section course-feature" aria-label="Curso destacado de aritmética">
-        <div class="container split">
+      <section class="section alt" aria-label="Curso destacado de aritmética">
+        <div class="wrap split">
           <div class="statement" aria-hidden="true">
             <span>25 + 37 = 62</span>
             <span>3/4 + 1/2 = 5/4</span>
@@ -217,10 +127,7 @@
           </div>
           <div>
             <h2>Aritmética y fundamentos</h2>
-            <p class="note">
-              Una base sólida cambia todo: mejora la seguridad al resolver problemas y prepara al estudiante
-              para avanzar hacia álgebra, funciones y cálculo.
-            </p>
+            <p class="note">Una base sólida cambia todo: mejora la seguridad al resolver problemas y prepara al estudiante para avanzar hacia álgebra, funciones y cálculo.</p>
             <ul class="topic-list">
               <li>Operaciones básicas</li>
               <li>Fracciones y decimales</li>
@@ -233,69 +140,37 @@
         </div>
       </section>
 
-      <section class="section ink-band personalized" aria-label="Clases personalizadas">
-        <div class="container split">
+      <section class="section dark" aria-label="Clases personalizadas">
+        <div class="wrap split">
           <div>
             <h2>Clases personalizadas para avanzar a tu ritmo.</h2>
-            <a class="btn btn-light" href="https://wa.me/525638811474?text=Hola%2C%20quiero%20informacion%20sobre%20clases%20personalizadas%20de%20EtaGebra.">
-              Pedir informes de clases personalizadas
-            </a>
+            <a class="btn btn-light" href="https://wa.me/525638811474?text=Hola%2C%20quiero%20informacion%20sobre%20clases%20personalizadas%20de%20EtaGebra.">Pedir informes de clases personalizadas</a>
           </div>
-          <div class="rows">
-            <article>
-              <h3>Primera clase</h3>
-              <p>Agenda una primera clase para conocer nuestro método y definir cómo podemos ayudarte.</p>
-            </article>
-            <article>
-              <h3>Materias</h3>
-              <p>Álgebra, geometría, trigonometría, física, química, biología, inglés y áreas afines.</p>
-            </article>
-            <article>
-              <h3>Seguimiento</h3>
-              <p>Nos pondremos en contacto para revisar tus datos, tus objetivos y los detalles necesarios para tu clase.</p>
-            </article>
+          <div class="stack">
+            <article class="card"><h3>Primera clase</h3><p>Agenda una primera clase para conocer nuestro método y definir cómo podemos ayudarte.</p></article>
+            <article class="card"><h3>Materias</h3><p>Álgebra, geometría, trigonometría, física, química, biología, inglés y áreas afines.</p></article>
+            <article class="card"><h3>Seguimiento</h3><p>Nos pondremos en contacto para revisar tus datos, tus objetivos y los detalles necesarios para tu clase.</p></article>
           </div>
         </div>
       </section>
 
-      <section class="section method" id="metodo">
-        <div class="container">
+      <section class="section" id="metodo">
+        <div class="wrap">
           <h2>Menos memorizar pasos, más entender lo que está pasando.</h2>
-
-          <div class="steps">
-            <article>
-              <span class="glyph" aria-hidden="true">+</span>
-              <h3>Base firme</h3>
-              <p>Antes de avanzar, revisamos los conceptos que sostienen el tema.</p>
-            </article>
-            <article>
-              <span class="glyph" aria-hidden="true">=</span>
-              <h3>Ejemplos claros</h3>
-              <p>Problemas resueltos con explicación, no solo resultado final.</p>
-            </article>
-            <article>
-              <span class="glyph" aria-hidden="true">%</span>
-              <h3>Practica activa</h3>
-              <p>La clase está pensada para practicar: 20% explicación y 80% ejercicios guiados.</p>
-            </article>
-            <article>
-              <span class="glyph" aria-hidden="true">√</span>
-              <h3>Cierre concreto</h3>
-              <p>Cada sesion termina con acuerdos de estudio y ejercicios sugeridos.</p>
-            </article>
+          <div class="cards cards-4">
+            <article class="card"><span class="chip">+</span><h3>Base firme</h3><p>Antes de avanzar, revisamos los conceptos que sostienen el tema.</p></article>
+            <article class="card"><span class="chip">=</span><h3>Ejemplos claros</h3><p>Problemas resueltos con explicación, no solo resultado final.</p></article>
+            <article class="card"><span class="chip">%</span><h3>Practica activa</h3><p>La clase está pensada para practicar: 20% explicación y 80% ejercicios guiados.</p></article>
+            <article class="card"><span class="chip">√</span><h3>Cierre concreto</h3><p>Cada sesion termina con acuerdos de estudio y ejercicios sugeridos.</p></article>
           </div>
         </div>
       </section>
 
-      <section class="section band about" id="experiencia">
-        <div class="container split">
+      <section class="section about" id="experiencia">
+        <div class="wrap split">
           <h2>Clases con trato humano, ritmo claro y exigencia bien puesta.</h2>
           <div>
-            <p>
-              Somos EtaGebra, un equipo dedicado a ofrecer clases de refuerzo en matemáticas, física, biología y química.
-              Desde 2015 brindamos apoyo académico con personal calificado, comprometido a fortalecer habilidades y
-              acompañar el avance de cada estudiante.
-            </p>
+            <p>Somos EtaGebra, un equipo dedicado a ofrecer clases de refuerzo en matemáticas, física, biología y química. Desde 2015 brindamos apoyo académico con personal calificado, comprometido a fortalecer habilidades y acompañar el avance de cada estudiante.</p>
             <ul class="check-list">
               <li>Secundaria y preparatoria</li>
               <li>Admisión universitaria</li>
@@ -306,76 +181,36 @@
         </div>
       </section>
 
-      <section class="section team" id="equipo">
-        <div class="container">
+      <section class="section alt" id="equipo">
+        <div class="wrap">
           <h2>Profesores EtaGebra</h2>
-          <div class="team-grid">
-            <article>
-              <img src="assets/profes/elvis.png?v=20260902" alt="Elvis, profesor de EtaGebra">
-              <h3>Dr. Elvis García</h3>
-              <p class="role">Profesor de Matemáticas y Física</p>
-              <ul>
-                <li>Licenciatura en Física.</li>
-                <li>Maestría en Ciencia de Materiales.</li>
-                <li>Más de 9 años en enseñanza y divulgación de ciencias exactas.</li>
-              </ul>
-            </article>
-            <article>
-              <img src="assets/profes/edgar.png" alt="Edgar, profesor de EtaGebra">
-              <h3>Dr. Edgar Puente</h3>
-              <p class="role">Especialista en Ciencia de Materiales</p>
-              <ul>
-                <li>Doctorado en Ciencia de Materiales.</li>
-                <li>Maestría en Ciencia de Materiales.</li>
-                <li>Licenciatura en Ingeniería Ambiental.</li>
-              </ul>
-            </article>
-            <article>
-              <img src="assets/profes/nahomi.png" alt="Nahomi, profesora de EtaGebra">
-              <h3>Biol. Nahomi Honda</h3>
-              <p class="role">Profesora de Biología e Inglés</p>
-              <ul>
-                <li>Licenciatura en Biología.</li>
-                <li>Experiencia en biología e inglés a nivel medio superior y universitario.</li>
-              </ul>
-            </article>
+          <div class="cards cards-3 team">
+            <article class="card"><img src="assets/profes/elvis.png?v=20260902" alt="Elvis, profesor de EtaGebra"><h3>Dr. Elvis García</h3><p class="role">Profesor de Matemáticas y Física</p><ul><li>Licenciatura en Física.</li><li>Maestría en Ciencia de Materiales.</li><li>Más de 9 años en enseñanza y divulgación de ciencias exactas.</li></ul></article>
+            <article class="card"><img src="assets/profes/edgar.png" alt="Edgar, profesor de EtaGebra"><h3>Dr. Edgar Puente</h3><p class="role">Especialista en Ciencia de Materiales</p><ul><li>Doctorado en Ciencia de Materiales.</li><li>Maestría en Ciencia de Materiales.</li><li>Licenciatura en Ingeniería Ambiental.</li></ul></article>
+            <article class="card"><img src="assets/profes/nahomi.png" alt="Nahomi, profesora de EtaGebra"><h3>Biol. Nahomi Honda</h3><p class="role">Profesora de Biología e Inglés</p><ul><li>Licenciatura en Biología.</li><li>Experiencia en biología e inglés a nivel medio superior y universitario.</li></ul></article>
           </div>
         </div>
       </section>
 
-      <section class="section band contact" id="contacto">
-        <div class="container split">
+      <section class="section" id="contacto">
+        <div class="wrap split">
           <div>
             <h2>¿Quieres informes de los cursos?</h2>
-            <p class="note">
-              Escribe por WhatsApp para recibir fechas, horarios, temario, disponibilidad de grupo o detalles de clases personalizadas.
-            </p>
-            <div class="social-links" aria-label="Redes sociales de EtaGebra">
-              <a class="text-link" href="https://www.facebook.com/etagebra.educacion" target="_blank" rel="noopener">Facebook</a>
-              <a class="text-link" href="https://www.instagram.com/etagebra.educacion" target="_blank" rel="noopener">Instagram</a>
-            </div>
+            <p class="note">Escribe por WhatsApp para recibir fechas, horarios, temario, disponibilidad de grupo o detalles de clases personalizadas.</p>
+            <p class="social"><a href="https://www.facebook.com/etagebra.educacion" target="_blank" rel="noopener">Facebook</a> <a href="https://www.instagram.com/etagebra.educacion" target="_blank" rel="noopener">Instagram</a></p>
           </div>
-          <div class="contact-action">
-            <a class="btn btn-primary" href="https://wa.me/525638811474?text=Hola%2C%20quiero%20informacion%20sobre%20los%20cursos%20de%20EtaGebra.">
-              WhatsApp: 56 3881 1474
-            </a>
-          </div>
+          <div class="cta-side"><a class="btn btn-primary" href="https://wa.me/525638811474?text=Hola%2C%20quiero%20informacion%20sobre%20los%20cursos%20de%20EtaGebra.">WhatsApp: 56 3881 1474</a></div>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <div class="container footer-grid">
+      <div class="wrap foot">
         <strong>EtaGebra</strong>
         <span>Entendemos las ciencias, impulsamos tu futuro.</span>
-        <div class="footer-social">
-          <a class="text-link" href="https://www.facebook.com/etagebra.educacion" target="_blank" rel="noopener">Facebook</a>
-          <a class="text-link" href="https://www.instagram.com/etagebra.educacion" target="_blank" rel="noopener">Instagram</a>
-          <a class="text-link" href="https://api.etagebra.com/profesores">Da clases con nosotros</a>
-        </div>
+        <div class="social"><a href="https://www.facebook.com/etagebra.educacion" target="_blank" rel="noopener">Facebook</a> <a href="https://www.instagram.com/etagebra.educacion" target="_blank" rel="noopener">Instagram</a> <a href="https://api.etagebra.com/profesores">Da clases con nosotros</a></div>
       </div>
     </footer>
-
     <script src="script.js"></script>
   </body>
 </html>
