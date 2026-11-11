@@ -204,3 +204,6 @@ a{color:inherit}
 @media(max-width:64rem){.reels{grid-template-columns:minmax(0,1fr)}}
 
 .dark .lead{color:#e1ddf5}
+
+.reel-clases{margin-top:36px;justify-items:start}
+.dark .reel figcaption{color:#fff}
