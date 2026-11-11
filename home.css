@@ -28,8 +28,8 @@
   font-weight: 500; font-size: var(--text-md); text-decoration: none; text-align: center;
   transition: background-color var(--dur-micro) var(--ease-out), color var(--dur-micro) var(--ease-out);
 }
-.btn-primary { background: var(--color-ink); color: var(--color-paper); }
-.btn-primary:hover { background: var(--color-ink-2); }
+.btn-primary { background: var(--color-accent); color: var(--color-accent-ink); border-color: var(--color-accent); }
+.btn-primary:hover { background: var(--color-ink); border-color: var(--color-ink); }
 .btn-outline { background: transparent; color: var(--color-ink); }
 .btn-outline:hover { background: var(--color-ink); color: var(--color-paper); }
 .btn-light { background: var(--color-paper); color: var(--color-ink); border-color: var(--color-paper); }
@@ -43,7 +43,7 @@
 /* ---------- rhythm ---------- */
 .section { padding-block: var(--section-gap-s); }
 .band { background: var(--color-paper-2); }
-.ink-band { background: var(--color-ink); color: var(--color-paper); }
+.ink-band { background: var(--color-navy); color: var(--color-navy-ink); }
 .ink-band h2, .ink-band h3 { color: var(--color-paper); }
 .ink-band p { color: color-mix(in oklab, var(--color-paper) 78%, transparent); }
 .ink-band .rows article { border-top-color: color-mix(in oklab, var(--color-paper) 28%, transparent); }
@@ -68,7 +68,7 @@
 /* ---------- character set (course glyph cells) ---------- */
 .charset { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: var(--rule-hair) solid var(--color-ink); border-left: var(--rule-hair) solid var(--color-rule); }
 .charset article, .steps article { padding: var(--space-lg); border-right: var(--rule-hair) solid var(--color-rule); border-bottom: var(--rule-hair) solid var(--color-rule); display: grid; align-content: start; gap: var(--space-xs); }
-.glyph { font-family: var(--font-display); font-variation-settings: "opsz" 96; font-size: clamp(3rem, 6vw, 5rem); line-height: 1; color: var(--color-ink); margin-bottom: var(--space-sm); }
+.glyph { font-family: var(--font-display); font-variation-settings: "opsz" 96; font-size: clamp(3rem, 6vw, 5rem); line-height: 1; color: var(--color-navy); margin-bottom: var(--space-sm); }
 .charset article:hover .glyph, .steps article:hover .glyph { color: var(--color-accent); }
 .benefits { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--gap-columns); margin: var(--space-xl) 0 0; }
 .benefits dt { font-weight: 500; }
@@ -84,7 +84,7 @@
 /* ---------- catalogue as a waterfall table ---------- */
 .catalog-table { border-top: 3px double var(--color-rule-2); }
 .catalog-table article { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 4fr) minmax(0, 6fr); gap: var(--gap-columns); align-items: baseline; padding-block: var(--space-md); border-bottom: var(--rule-hair) solid var(--color-rule); }
-.catalog-table article:hover { background: var(--color-paper-2); }
+.catalog-table article:hover { background: var(--color-tint); }
 .catalog-table .area { grid-column: 1; font-size: var(--text-sm); font-weight: 500; color: var(--color-muted); }
 .catalog-table h3 { grid-column: 2; }
 .catalog-table p { grid-column: 3; color: var(--color-ink-2); font-size: var(--text-sm); }
@@ -96,6 +96,7 @@
 .topic-list li, .check-list li { padding-block: var(--space-sm); border-top: var(--rule-hair) solid var(--color-rule); }
 
 /* ---------- method ---------- */
+.method { background: var(--color-tint); }
 .method h2 { margin-bottom: var(--space-xl); }
 .steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: var(--rule-hair) solid var(--color-ink); border-left: var(--rule-hair) solid var(--color-rule); }
 

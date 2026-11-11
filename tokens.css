@@ -12,8 +12,9 @@
   --color-paper: oklch(96.5% 0.016 82); --color-paper-2: oklch(93.5% 0.02 80); --color-paper-3: oklch(89% 0.024 78);
   --color-ink: oklch(17% 0.012 60); --color-ink-2: oklch(28% 0.014 60); --color-muted: oklch(49% 0.014 65);
   --color-rule: oklch(80% 0.018 75); --color-rule-2: oklch(66% 0.02 72);
-  --color-accent: oklch(45% 0.18 262); --color-accent-ink: oklch(97% 0.012 82); --color-focus: oklch(50% 0.18 262);
-  --color-guide: oklch(55% 0.16 262 / 0.5);
+  --color-accent: oklch(38% 0.16 27); --color-accent-ink: oklch(97% 0.012 82); --color-focus: oklch(45% 0.18 27);
+  --color-navy: oklch(24% 0.12 285); --color-navy-ink: oklch(97% 0.012 82); --color-tint: oklch(94% 0.024 285);
+  --color-guide: oklch(45% 0.16 27 / 0.45);
   --font-display: "Bodoni Moda", ui-serif, Georgia, serif; --font-body: "Geist", ui-sans-serif, system-ui, sans-serif;
   --font-outlier: "Geist Mono", ui-monospace, monospace;
   --radius-card: 0; --radius-pill: 0; --rule-hair: 1px;
