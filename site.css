@@ -196,3 +196,9 @@ a{color:inherit}
   .main-nav a{padding:14px 0;border-top:1px solid var(--line);font-size:1rem}
   .header-cta,.header-cta:not(.btn){display:none}
 }
+
+.reels{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:36px;align-items:start}
+.reel{margin:0;display:grid;gap:10px;justify-items:center}
+.reel .instagram-media{width:100%!important;min-width:0!important;max-width:420px!important;margin:0!important}
+.reel figcaption{font-weight:700;color:var(--navy)}
+@media(max-width:52rem){.reels{grid-template-columns:minmax(0,1fr)}}
