@@ -202,3 +202,5 @@ a{color:inherit}
 .reel .instagram-media{width:100%!important;min-width:0!important;max-width:420px!important;margin:0!important}
 .reel figcaption{font-weight:700;color:var(--navy)}
 @media(max-width:64rem){.reels{grid-template-columns:minmax(0,1fr)}}
+
+.dark .lead{color:#e1ddf5}
